@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fancy Form</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div>
+    <section id="toast" class=" py-[60px] absolute top-0 right-20 hidden ">
+      <div class="mx-auto px-4 sm:container">
+        <div class="flex justify-end">
+          <div
+            class="relative flex w-full max-w-[460px] items-center rounded-lg border border bg-primary/5 px-5 py-[18px]">
+            <p class="text-base text-red font-semibold text-primary sm:text-lg">
+              Input amount.....
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Form to Swap Currency -->
+  <div class="form">
+    <form id="form-swap" onsubmit="return !1">
+      <div>
+        <div class="mb-5">
+          <h5 class=" text-center text-4xl font-bold">Swap Currency</h5>
+        </div>
+      </div>
+
+      <!-- Button to Swap Values -->
+      <button id="swapButton" type="button" class="bg-yellow-500 text-white px-4 py-2 rounded">
+        Swap Values
+      </button>
+
+      <!-- Input Fields -->
+      <div class="flex flex-col gap-5 rounded-md border-2 p-5 ">
+        <canvas id="myChart"></canvas>
+        <div class="">
+          <label for="" class="mb-[10px] block text-base font-medium text-dark ">
+            Amount to send
+          </label>
+          <div class="flex items-center">
+            <span id="amount-input-label"
+              class="h-full rounded-tl-md rounded-bl-md border border-r-0 border-stroke dark:border-dark-3 bg-gray-2 dark:bg-dark-2 py-[10px] px-4 text-base uppercase text-body-color dark:text-dark-6">
+              USD
+            </span>
+            <input id="amount-input" type="text" placeholder="Input here.."
+              class="w-full bg-transparent rounded-br-md rounded-tr-md border border-stroke dark:border-dark-3 py-[10px] pr-3 pl-5 text-dark-6 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-gray-2" />
+          </div>
+        </div>
+        <div>
+          <label for="" class="mb-[10px] block text-base font-medium text-dark ">
+            Amount to receive
+          </label>
+          <div class="flex items-center">
+            <span id="amount-output-label"
+              class="h-full rounded-tl-md rounded-bl-md border border-r-0 border-stroke dark:border-dark-3 bg-gray-2 dark:bg-dark-2 py-[10px] px-4 text-base uppercase text-body-color dark:text-dark-6">
+              VND
+            </span>
+            <input disabled id="amount-output" type="text" placeholder=""
+              class="w-full bg-transparent rounded-br-md rounded-tr-md border border-stroke dark:border-dark-3 py-[10px] pr-3 pl-5 text-dark-6 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-gray-2" />
+          </div>
+        </div>
+
+        <!-- Confirm Swap Button -->
+        <a id="submitButton" href="javascript:void(0)"
+          class="border-dark dark:border-dark-2 border rounded-md inline-flex items-center justify-center py-3 px-7 text-center text-base font-medium text-dark hover:bg-gray-4 disabled:bg-gray-3 disabled:border-gray-3 disabled:text-dark-5">
+          Confirm Swap
+        </a>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="charts.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tailgrids@2.2.2/plugin.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailgrids@2.2.2/assets/css/tailwind.min.css" rel="stylesheet" />
+</body>
+
+</html>
